@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="sidepanel">
+        <div class="login-form">
+            <h1>Student Login Information</h1>
+            <label for="fullname">Enter Full Name:</label>
+            <br>
+            <input type="text" id="fullname" name="Full Name"><br><br>
+            
+            <label for="age">Enter Age:</label>
+            <br>
+            <input type="number" id="age" name="Age"><br><br>
+            
+            <label for="strand">Enter Strand:</label>
+            <br>
+            <input type="text" id="strand" name="strand"><br><br>
+            
+            <input class="submit-btn" type="button" id="submitBtn" value="SUBMIT">
+        </div>
+    </div>
+
+    <div id="userData"></div>
+
+    <script>
+        function displayUserData() {
+            // Get user input
+            var fullName = document.getElementById('fullname').value;
+            var age = document.getElementById('age').value;
+            var strand = document.getElementById('strand').value;
+
+            // Display user data on the webpage
+            var output = "Hi! " + fullName + "<br><br>";
+            output += "Your age is " + age + "<br><br>";
+            output += "You're currently " + "<br>"+ "enrolled as " + strand;
+
+            document.getElementById('userData').innerHTML = output;
+        }
+
+        // Add an event listener to the submit button
+        document.getElementById('submitBtn').addEventListener('click', displayUserData);
+    </script>
+</body>
+</html>
